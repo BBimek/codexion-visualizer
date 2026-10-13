@@ -1,0 +1,92 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codexion Visualizer</title>
+</head>
+<body>
+    <main>
+        <h1>Codexion Visualizer</h1>
+
+        <form id="simulation-form">
+            <fieldset>
+                <legend>Simulation settings</legend>
+
+                <label>
+                    Number of coders
+                    <input name="numberOfCoders" type="number"
+                        min="1" value="5" required>
+                </label>
+
+                <label>
+                    Time to burnout (ms)
+                    <input name="timeToBurnout" type="number"
+                        min="1" value="800" required>
+                </label>
+
+                <label>
+                    Time to compile (ms)
+                    <input name="timeToCompile" type="number"
+                        min="1" value="100" required>
+                </label>
+
+                <label>
+                    Time to debug (ms)
+                    <input name="timeToDebug" type="number"
+                        min="1" value="200" required>
+                </label>
+
+                <label>
+                    Time to refactor (ms)
+                    <input name="timeToRefactor" type="number"
+                        min="1" value="500" required>
+                </label>
+
+                <label>
+                    Compiles required
+                    <input name="numberOfCompilesRequired" type="number"
+                        min="1" value="5" required>
+                </label>
+
+                <label>
+                    Dongle cooldown (ms)
+                    <input name="dongleCooldown" type="number"
+                        min="0" value="10" required>
+                </label>
+
+                <label>
+                    Scheduler
+                    <select name="scheduler">
+                        <option value="fifo">FIFO</option>
+                        <option value="edf">EDF</option>
+                    </select>
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Simulation output</legend>
+
+                <label>
+                    Upload a text file
+                    <input id="log-file" type="file"
+                        accept=".txt,.log,.out,text/plain">
+                </label>
+
+                <label for="log-input">Or paste your output</label>
+                <textarea id="log-input" rows="12"
+                    placeholder="0 0 is compiling&#10;100 0 is debugging"
+                    spellcheck="false"></textarea>
+            </fieldset>
+
+            <button type="submit">Generate timeline</button>
+        </form>
+
+        <p id="status" role="status"></p>
+        <div id="timeline"></div>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

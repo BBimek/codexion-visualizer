@@ -1,0 +1,92 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 24px;
+    font-family: system-ui, sans-serif;
+    color: #172033;
+    background: #f8fafc;
+}
+
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+form {
+    display: grid;
+    gap: 16px;
+}
+
+fieldset {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    padding: 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+}
+
+legend {
+    font-weight: 600;
+    padding: 0 6px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+input,
+select,
+textarea,
+button {
+    font: inherit;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+    font-family: monospace;
+}
+
+button {
+    justify-self: start;
+    padding: 10px 18px;
+    border: 0;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+#status {
+    margin: 16px 0;
+}
+
+#timeline {
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+}
