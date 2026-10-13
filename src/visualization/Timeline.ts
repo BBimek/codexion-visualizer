@@ -18,8 +18,12 @@ export class Timeline {
     private readonly rowHeight = 55;
     private readonly barHeight = 25;
     private readonly minMarkerWidth = 8;
+    
+    private container: HTMLElement;
 
-    constructor(private container: HTMLElement) {}
+    constructor(container: HTMLElement) {
+        this.container = container;
+    }
 
     public render(simulation: Simulation): void {
         const width = 1200;

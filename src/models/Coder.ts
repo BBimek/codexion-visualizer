@@ -1,3 +1,4 @@
+
 import { Action } from "./Action";
 
 export class Coder {
@@ -6,6 +7,9 @@ export class Coder {
     public deadline: number = 0;
     public compilationsDone: number = 0;
     public burnedOut: boolean = false;
+    public id: number;
 
-    constructor(public id: number) {}
+    constructor(id: number) {
+        this.id = id;
+    }
 }
